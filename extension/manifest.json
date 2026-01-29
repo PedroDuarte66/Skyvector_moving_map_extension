@@ -1,0 +1,26 @@
+{
+  "name": "FS2020 SkyVector Moving Map",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "Skyvector Moving Map Extension",
+  "permissions": [ "tabs","storage" ],
+  "action": {
+    "default_popup": "skvpopup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://localhost/*", "https://skyvector.com/*", "https://www.skyvector.com/*" ],
+      "js": [ "moving-map-content.js" ]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+    "web_accessible_resources": [
+    {
+      "resources": [ "injected.js", "avion_rojo.png" ],
+      "matches": [ "https://skyvector.com/*", "https://www.skyvector.com/*"]
+    }
+  ]
+}
