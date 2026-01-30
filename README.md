@@ -14,10 +14,10 @@ I developed this tool to improve the flight sim experience for everyone. If you 
 
 ## 🛠️ Installation & Setup
 
-### Part 1: Chrome Extension
+### Part 1: Chrome/Edge Extension
 1. Create a new folder in your root directory (e.g., `C:\Dev\SkyVectorMovingMap`).
 2. Copy the project files into that folder.
-3. Open Chrome and go to `chrome://extensions/`.
+3. Open Chrome and go to `chrome://extensions/` or `edge://extensions/`.
 4. Enable **Developer mode** (top right toggle).
 5. Click **Load unpacked** and select the `extension` folder inside your project directory.
 
@@ -31,13 +31,17 @@ I developed this tool to improve the flight sim experience for everyone. If you 
 If successful, you will see: ✅ *Conectado a Microsoft Flight Simulator*.
 
 ### Part 3: Activation
-1. In Chrome, click the **Extensions icon** (puzzle piece).
+1. In Chrome/Edge, click the **Extensions icon** (puzzle piece).
 2. Find the extension and click **"Activar Tracking"**.
 3. Open [SkyVector.com](https://skyvector.com).
 4. If you don't see your aircraft, press **F5** to refresh the page.
 
 ---
 **Happy flying and happy landings!** ✈️
+
+## Credits
+This project is based on the original work by [MoMadenU](https://github.com/MoMadenU/msfs2020-skyvector ). 
+Modified and updated to work with current MSFS versions.
 
 ## ⚠️ Disclaimer
 This software is provided "as is". The creator is not liable for any damage or misuse. Use at your own risk.
