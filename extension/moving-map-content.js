@@ -7,7 +7,7 @@ chrome.storage.sync.get(
     portNumber = data.portNumber;
     isTrackingEnabled = data.trackingEnabled;
     injectScript();
-  }
+  },
 );
 
 chrome.storage.onChanged.addListener((changes) => {
@@ -41,7 +41,7 @@ function getLocation() {
               coords: jsonResult.coordinates,
               heading: jsonResult.heading, // <-- Pasamos el rumbo real
             },
-            "*"
+            "*",
           );
         } else {
           console.log("Esperando datos válidos del simulador...");
