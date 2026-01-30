@@ -23916,8 +23916,8 @@ var systray = new SysTray({
     tooltip: "MSFS SkyVector Server",
     items: [
       {
-        title: "Cerrar Servidor",
-        tooltip: "Detener y salir",
+        title: "Stop Server",
+        tooltip: "Stop and Exit",
         checked: false,
         enabled: true
       }
@@ -23927,8 +23927,8 @@ var systray = new SysTray({
   copyDir: true
 });
 systray.onClick((action) => {
-  if (action.item.title === "Cerrar Servidor") {
-    console.log("Cerrando desde bandeja...");
+  if (action.item.title === "Stop Server") {
+    console.log("Closing from system tray...");
     systray.kill();
     process.exit(0);
   }
@@ -23943,7 +23943,7 @@ async function startSimConnection() {
         api = new MSFS_API();
         await api.connect({ autoReconnect: true });
         planeData.connected = true;
-        console.log("\u2705 Conectado a Microsoft Flight Simulator");
+        console.log("\u2705 Connected to Microsoft Flight Simulator");
         intervalId = setInterval(async () => {
           try {
             if (planeData.connected && api) {
@@ -23960,14 +23960,14 @@ async function startSimConnection() {
           }
         }, 1e3);
       } catch (err) {
-        console.log("\u23F3 Buscando simulador...");
+        console.log("\u23F3 Searching for simulator...");
         planeData.connected = false;
         setTimeout(connectSim, 5e3);
       }
     }
     connectSim();
   } catch (error) {
-    console.error("\u274C Error cargando librer\xEDa MSFS:", error);
+    console.error("\u274C Error loading MSFS library:", error);
   }
 }
 app.get("/get", (req, res) => {

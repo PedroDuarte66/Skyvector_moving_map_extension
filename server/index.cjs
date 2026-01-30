@@ -20,7 +20,7 @@ function getIcon(filePath) {
     return fs.readFileSync(filePath).toString("base64");
   } catch (err) {
     console.log(
-      "⚠️ No se pudo cargar avion.ico, usando punto azul por defecto."
+      "⚠️ No se pudo cargar avion.ico, usando punto azul por defecto.",
     );
     return "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMklEQVR42mP8/5+hnoGBAcmAAYhZ6CHASB74j+SBD9H/Gf+RPAhG8iAYyYNgJA+CkWQAALALH/F699SNAAAAAElFTkSuQmCC";
   }
@@ -37,8 +37,8 @@ const systray = new SysTray({
     tooltip: "MSFS SkyVector Server",
     items: [
       {
-        title: "Cerrar Servidor",
-        tooltip: "Detener y salir",
+        title: "Stop Server",
+        tooltip: "Stop and Exit",
         checked: false,
         enabled: true,
       },
@@ -49,8 +49,8 @@ const systray = new SysTray({
 });
 
 systray.onClick((action) => {
-  if (action.item.title === "Cerrar Servidor") {
-    console.log("Cerrando desde bandeja...");
+  if (action.item.title === "Stop Server") {
+    console.log("Closing from system tray...");
     systray.kill();
     process.exit(0);
   }
@@ -68,7 +68,7 @@ async function startSimConnection() {
         api = new MSFS_API();
         await api.connect({ autoReconnect: true });
         planeData.connected = true;
-        console.log("✅ Conectado a Microsoft Flight Simulator");
+        console.log("✅ Connected to Microsoft Flight Simulator");
 
         intervalId = setInterval(async () => {
           try {
@@ -88,14 +88,14 @@ async function startSimConnection() {
           } catch (err) {}
         }, 1000);
       } catch (err) {
-        console.log("⏳ Buscando simulador...");
+        console.log("⏳ Searching for simulator...");
         planeData.connected = false;
         setTimeout(connectSim, 5000);
       }
     }
     connectSim();
   } catch (error) {
-    console.error("❌ Error cargando librería MSFS:", error);
+    console.error("❌ Error loading MSFS library:", error);
   }
 }
 
