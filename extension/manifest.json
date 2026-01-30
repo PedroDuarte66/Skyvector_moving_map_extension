@@ -5,7 +5,7 @@
   "description": "Skyvector Moving Map Extension",
   "permissions": [ "tabs","storage" ],
   "action": {
-    "default_popup": "skvpopup.html"
+    "default_popup": "skypopup.html"
   },
   "content_scripts": [
     {
