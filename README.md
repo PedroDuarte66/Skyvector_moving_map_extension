@@ -39,6 +39,10 @@ If successful, you will see: ✅ *Conectado a Microsoft Flight Simulator*.
 ---
 **Happy flying and happy landings!** ✈️
 
+## Credits
+This project is based on the original work by [MoMadenU](MoMadenU/msfs2020-skyvector). 
+Modified and updated to work with current MSFS versions.
+
 ## ⚠️ Disclaimer
 This software is provided "as is". The creator is not liable for any damage or misuse. Use at your own risk.
 
