@@ -86,7 +86,7 @@ async function startSimConnection() {
               }
             }
           } catch (err) {}
-        }, 1000);
+        }, 100);
       } catch (err) {
         console.log("⏳ Searching for simulator...");
         planeData.connected = false;

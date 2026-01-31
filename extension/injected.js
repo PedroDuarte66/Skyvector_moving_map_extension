@@ -27,15 +27,20 @@ function setMapIcon(latlon, heading) {
 
   var point = SkyVector.ll2xy(lat, lon);
   if (point && img) {
-    img.style.top =
-      Math.round(point.y - SkyVector.data.slideroffsety - planeSize / 2) + "px";
-    img.style.left =
-      Math.round(point.x - SkyVector.data.slideroffsetx - planeSize / 2) + "px";
+    const x = point.x - SkyVector.data.slideroffsetx - planeSize / 2;
+    const y = point.y - SkyVector.data.slideroffsety - planeSize / 2;
+
+    // Resetear top y left para que mande el transform
+    img.style.top = "0px";
+    img.style.left = "0px";
     img.style.visibility = "visible";
 
-    // USAMOS LA VARIABLE CONVERTIDA
+    // --- LA CLAVE: Combinar Posición y Rotación en un solo Transform ---
     if (typeof headingGrados === "number") {
-      img.style.transform = "rotate(" + headingGrados + "deg)";
+      // Usamos translate3d para activar la aceleración de video (GPU) + rotate
+      img.style.transform = `translate3d(${x}px, ${y}px, 0px) rotate(${headingGrados}deg)`;
+    } else {
+      img.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
     }
   }
 }
